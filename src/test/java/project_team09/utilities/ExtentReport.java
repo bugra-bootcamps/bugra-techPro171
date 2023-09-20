@@ -9,15 +9,28 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import project_team09.utilities.Driver;
 import project_team09.utilities.ReusableMethods;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class ExtentReport {
-    protected static ExtentReports extentReports;
-    protected static ExtentTest extentTest;
-    protected static ExtentHtmlReporter extentHtmlReporter;
+
+    protected ExtentReports extentReport;//-->raporlamayı başlatır
+    protected ExtentHtmlReporter extentHtmlReporter;//-->Html formatında rapor oluşturur
+    protected ExtentTest extentTest;//-->Test adımlarına bilgi eklenir
+
+    public void rapor(String browser, String reportName) {
+        extentReport = new ExtentReports();
+        String tarih1 = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu1 = "target/extentReport/report" + tarih1 + ".html";
+        extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu1);
+        extentReport.attachReporter(extentHtmlReporter);
+
+        //Raporda gözükmesini istediğimiz bilgiler
+        extentReport.setSystemInfo("Tester", "Erol");
+        extentReport.setSystemInfo("browser", browser);
+        extentHtmlReporter.config().setDocumentTitle("ExtentReport");
+        extentHtmlReporter.config().setReportName(reportName);
 
     @BeforeTest(alwaysRun = true)
     public void setUpTest() {
@@ -60,5 +73,6 @@ public abstract class ExtentReport {
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
+
     }
 }
