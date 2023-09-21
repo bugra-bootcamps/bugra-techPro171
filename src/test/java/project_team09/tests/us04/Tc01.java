@@ -48,7 +48,7 @@ signIn();
         shipping.streetAddressFirstBox.clear();
         shipping.streetAddressFirstBox.sendKeys(addressIlkBox);
 //"Street address" ikinci butona apartman ismi yaz
-        String addressIkinciBox=ConfigReader.getProperty("degistirilecekAdressIkinciBox");
+        String addressIkinciBox=ConfigReader.getProperty("degistirilecekAdresIkinciBox");
         shipping.streetAddressSeccondBox.clear();
         shipping.streetAddressSeccondBox.sendKeys(addressIkinciBox);
 //"Postcode / ZIP" kısmına posta kodu yaz
