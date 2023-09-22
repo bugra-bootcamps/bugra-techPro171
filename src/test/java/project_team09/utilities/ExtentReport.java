@@ -7,7 +7,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class ExtentReport {
+public  class ExtentReport {
 
     protected ExtentReports extentReport;//-->raporlamayı başlatır
     protected ExtentHtmlReporter extentHtmlReporter;//-->Html formatında rapor oluşturur
