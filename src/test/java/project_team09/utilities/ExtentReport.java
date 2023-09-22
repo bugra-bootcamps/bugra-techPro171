@@ -13,7 +13,7 @@ public  class ExtentReport {
     protected ExtentHtmlReporter extentHtmlReporter;//-->Html formatında rapor oluşturur
     protected ExtentTest extentTest;//-->Test adımlarına bilgi eklenir
 
-    public void rapor(String browser, String reportName) {
+    public  void  rapor(String browser, String reportName) {
 
         extentReport = new ExtentReports();
         String tarih1 = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
@@ -28,4 +28,15 @@ public  class ExtentReport {
         extentHtmlReporter.config().setReportName(reportName);
 
     }
+
+
+
+
+
+
+
+
+
+
+
 }

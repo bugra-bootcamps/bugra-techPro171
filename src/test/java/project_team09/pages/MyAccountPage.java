@@ -40,6 +40,20 @@ public class MyAccountPage {
     public WebElement LogoutButtonLocate;
 
 
+    @FindBy(xpath = "(//*[.='Register'])[2]")
+    public WebElement RegisterButtonLocate;
+
+    @FindBy(xpath = "//*[text()='Become a Vendor']")
+    public WebElement BecomeVendorButtonLocate;
+
+    @FindBy(xpath = "(//h2)[1]")
+    public WebElement VendorRegistrationText;
 
 
 }
+
+
+
+
+
+
