@@ -39,6 +39,7 @@ public class MyAccountPage {
     @FindBy(xpath = "(//li)[14]")
     public WebElement LogoutButtonLocate;
 
+
     @FindBy(xpath = "(//*[.='Register'])[2]")
     public WebElement RegisterButtonLocate;
 
@@ -50,3 +51,9 @@ public class MyAccountPage {
 
 
 }
+
+
+
+
+
+
