@@ -46,14 +46,15 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[text()='Become a Vendor']")
     public WebElement BecomeVendorButtonLocate;
 
-    @FindBy(xpath = "(//h2)[1]")
-    public WebElement VendorRegistrationText;
 
+
+    @FindBy(id = "password_strength")
+    public WebElement verifyPassword;
+
+    @FindBy(xpath = "(//input[@type='password'])[1]")
+    public WebElement PasswordTextBoxLocate;
 
 }
-
-
-
 
 
 
