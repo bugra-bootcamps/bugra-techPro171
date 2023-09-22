@@ -30,8 +30,8 @@ public class Us10 extends ExtentReport {
 
     @Test(dataProvider = "Password")
     public void test01(String sort, String weak, String good, String strong) {
-        ReusableMethods.venderKayit();
-        extentTest = ExtentReport. ("Vendor Kaydı US010 TC01", "Password seviyeleri görülebilmeli (Vendor Kaydı için)");
+        ReusableMethods.vendorKayit();
+
 
     }
 }

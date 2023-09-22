@@ -206,7 +206,7 @@ public class ReusableMethods {
 
         }
     }
-    public static void venderKayit() {
+    public static void vendorKayit() {
         //Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         ReusableMethods.tumSayfaResmi("AnaSayfa");
