@@ -20,14 +20,6 @@ public class Us10 extends ExtentReport {
                         ConfigReader.getProperty("good"),
                         ConfigReader.getProperty("strong")},
 
-    @DataProvider
-    public static Object[][] Password() {
-        return new Object[][]{
-                {ConfigReader.getProperty("tooshort"),
-                        ConfigReader.getProperty("weak"),
-                        ConfigReader.getProperty("good"),
-                        ConfigReader.getProperty("strong")},
-
                 {ConfigReader.getProperty("tooshort2"),
                         ConfigReader.getProperty("weak2"),
                         ConfigReader.getProperty("good2"),
