@@ -223,5 +223,4 @@ public class ReusableMethods {
         softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistionTextLocate.getText());
 
     }
-
 }

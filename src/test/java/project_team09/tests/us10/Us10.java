@@ -4,11 +4,21 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import project_team09.pages.MyAccountPage;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
 
 public class Us10 extends ExtentReport {
+
+    @DataProvider
+    public static Object[][] Password() {
+        return new Object[][]{
+                {ConfigReader.getProperty("tooshort"),
+                        ConfigReader.getProperty("weak"),
+                        ConfigReader.getProperty("good"),
+                        ConfigReader.getProperty("strong")},
 
     @DataProvider
     public static Object[][] Password() {
@@ -24,6 +34,7 @@ public class Us10 extends ExtentReport {
                         ConfigReader.getProperty("strong2")}
 
         };
+
     /*
     Password seviyeleri görülebilmeli ('Become a Vendor' Kaydı için)
     -too short
@@ -70,7 +81,6 @@ public class Us10 extends ExtentReport {
 
         MyAccountPage.PasswordTextBoxLocate.sendKeys(weak);
         extentTest.info("Password alanina 6 karakterli sadece rakam veya küçük harf veya büyük harf veya special karakter içeren bir password girildi (Büyük Harf)");
-
 
         //"Weak" mesajının göründüğünü doğrula.
         Assert.assertTrue(MyAccountPage.verifyPassword.getText().contains("Weak"));
@@ -133,9 +143,14 @@ public class Us10 extends ExtentReport {
          Password seviyelerinin hepsini yerine yazıp doğrulamasını yapıyoruz
          bu sırada da hepsinin ekran fotoğraflarını alarak kodlarımızı da
          görüntülerle desteklemiş oluyoruz.
-
-
          */
+    }
 
+    ExtentReport rapor = new ExtentReport() {
+    };
+
+    @Test(dataProvider = "Password")
+    public void test01(String sort, String weak, String good, String strong) {
+        ReusableMethods.vendorKayit();
     }
 }
