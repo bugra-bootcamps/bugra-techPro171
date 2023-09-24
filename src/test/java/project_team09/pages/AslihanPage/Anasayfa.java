@@ -22,8 +22,14 @@ public class Anasayfa {
     @FindBy (xpath = "//*[@class='nav-link']")
     public WebElement signUpButonAs;
 
+    @FindBy (xpath = "//*[@name='register']")
+    public WebElement signUpYeniKayit;
 
-    @FindBy (xpath = "(//*[@class='woocommerce-Input woocommerce-Input--text input-text'])[1]")
+    @FindBy (xpath = "//*[@id='yith-wcwl-message']")
+    public WebElement popUpMesajAs;
+
+
+    @FindBy (xpath = "//*[@id='reg_username']")
     public WebElement usernameAs;
 
     @FindBy (xpath = "//*[@id='reg_email']")
@@ -34,6 +40,14 @@ public class Anasayfa {
 
     @FindBy (xpath = "//*[@id='register-policy']")
     public WebElement iAgreeButonAs;
+
+
+    @FindBy (xpath = "(//*[@class='submit-status'])[2]")
+    public WebElement kayitliBilgiHataAs;
+
+
+    @FindBy (xpath = "//*[@name='rememberme']")
+    public WebElement signInRememberMe;
 
 
 
@@ -67,7 +81,7 @@ public class Anasayfa {
     @FindBy (xpath = "//*[@for='billing_first_name']")
     public WebElement firstNameYazi;
 
-    @FindBy (xpath = "//*[@value='kennis.kennis@feerock.com']")
+    @FindBy (xpath = "//*[@value='woody.ansley@feerock.com']")
     public WebElement emailValue;
 
 
@@ -78,24 +92,23 @@ public class Anasayfa {
     @FindBy (xpath = "//*[@name='billing_last_name']")
     public WebElement adressesLastNameAs;
 
-    @FindBy (xpath = "(//*[@role='presentation'])[1]")
-    public WebElement adressesCountry_Region;
+    @FindBy (xpath = "//*[@id='billing_country_field']")
+    public WebElement countryRegionAs;
 
-    @FindBy (xpath = "//*[@class='select2-search__field']")
-    public WebElement adressesCountry_Region_Text;
+    @FindBy (xpath = "(//*[@aria-owns='select2-billing_country-results'])[1]")
+    public WebElement countryregionTextAs;
+
+    @FindBy (xpath = "//*[@id='billing_state_field']")
+    public WebElement stateCountAs;
+
+    @FindBy (xpath = "(//*[@aria-owns='select2-billing_state-results'])")
+    public WebElement stateCounttextAs;
 
     @FindBy (xpath = "//*[@name='billing_address_1']")
     public  WebElement streetAdressAs;
 
-    @FindBy (xpath = "(//*[@aria-owns='select2-billing_state-results'])[1]")
-    public WebElement countyStateAs;
-
     @FindBy (xpath = "//*[@name='billing_city']")
     public WebElement townCityAs;
-
-
-    @FindBy (xpath = "(//*[@aria-activedescendant='select2-billing_state-result-uloj-AL-01'])[1]")
-    public WebElement countyStateTextAs;
 
     @FindBy (xpath = "//*[@name='billing_postcode']")
     public  WebElement postcode_zipAs;
@@ -103,12 +116,23 @@ public class Anasayfa {
     @FindBy(xpath = "//*[@name='billing_phone']")
     public WebElement phoneAs;
 
-
     @FindBy (xpath = "//*[@class='btn btn-dark btn-rounded btn-sm']")
     public WebElement saveAdressButonAs;
 
     @FindBy (xpath = "//*[@class='woocommerce-error']")
     public WebElement fieldErrorAs;
+
+    @FindBy (xpath = "//*[@href='https://allovercommerce.com/my-account-2/edit-address/billing/']")
+    public WebElement editBillingButonAs;
+
+    @FindBy (xpath = "//*[@value='jüpiter']")
+    public WebElement firstNameEditBilling;
+
+    @FindBy (xpath = "//*[@value='neptün']")
+    public WebElement lastnameEditBilling;
+
+    @FindBy (xpath = "//*[@value='jossiel.lavante@feerock.com']")
+    public WebElement emailValue2;
 
 
 
