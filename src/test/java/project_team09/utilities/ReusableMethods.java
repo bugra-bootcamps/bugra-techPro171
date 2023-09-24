@@ -208,19 +208,19 @@ public class ReusableMethods {
     }
     public static void vendorKayit() {
         //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         ReusableMethods.tumSayfaResmi("AnaSayfa");
         //Register butonuna tikla
         MyAccountPage MyAccountPage = new MyAccountPage();
         MyAccountPage.RegisterButtonLocate.click();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(MyAccountPage.BecomeVendorButtonLocate.isDisplayed());
         //Çıkan ekranda "Become a Vendor" butonuna tıkla.
         MyAccountPage.BecomeVendorButtonLocate.click();
         //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistrationText.getText());
+        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistionTextLocate.getText());
 
     }
 

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class ExtentReport {
+    public abstract class ExtentReport {
     protected static ExtentReports extentReports;
     protected static ExtentTest extentTest;
     protected static ExtentHtmlReporter extentHtmlReporter;
