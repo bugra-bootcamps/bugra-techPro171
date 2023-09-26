@@ -11,6 +11,9 @@ public class MyAccountPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(xpath = "(//li)[5]")
+    public WebElement DashboardButtonLocate;
+
     @FindBy(xpath = "(//li)[6]")
     public WebElement StoreManagerButtonLocate;
 
@@ -39,6 +42,44 @@ public class MyAccountPage {
     @FindBy(xpath = "(//li)[14]")
     public WebElement LogoutButtonLocate;
 
+    @FindBy(xpath = "//*[@class='page-title']")
+    public WebElement MyAccountPageText;
+
+
+
+    @FindBy(xpath = "(//*[.='Register'])[2]")
+    public WebElement RegisterButtonLocate;
+
+    @FindBy(xpath = "(//h2)[1]")
+    public WebElement VendorRegistionTextLocate;
+
+    @FindBy(xpath = "//*[text()='Become a Vendor']")
+    public WebElement BecomeVendorButtonLocate;
+
+    @FindBy(id = "password_strength")
+    public WebElement verifyPassword;
+
+    @FindBy(xpath = "(//input[@type='password'])[1]")
+    public WebElement PasswordTextBoxLocate;
+
+    @FindBy(xpath = "(//*[@class='login inline-type']")
+    public WebElement SignİnButtonLocate;
+
+    @FindBy(xpath = "//*[@id='customer_login']")
+    public WebElement SignInPopUp;
+
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement PopUpİçindePasswordBox;
+
+    @FindBy(xpath = "//button[@value='Sign In']")
+    public WebElement PopUpİçindesignInButton;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement PopUpİçindeEmailBox;
+
+
+
+
 
     @FindBy(xpath = "(//*[.='Register'])[2]")
     public WebElement RegisterButtonLocate;
@@ -51,6 +92,7 @@ public class MyAccountPage {
 
 
 }
+
 
 
 
