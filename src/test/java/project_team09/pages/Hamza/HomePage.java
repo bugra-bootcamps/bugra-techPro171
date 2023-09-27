@@ -23,8 +23,40 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Search results for “Shoes”']")
     public WebElement aramaSonucu;
 
-    @FindBy(xpath = "(//p)[2]")
+    @FindBy(xpath = "(//p)[3]")
     public WebElement NoaramaSonucu;
+
+    @FindBy(xpath = "(//*[@*='attachment-woocommerce_thumbnail size-woocommerce_thumbnail'])[2]")
+    public WebElement shoesPicture;
+
+    @FindBy(xpath = "//*[@*='add-to-cart']")
+    public WebElement addToCartButton;
+
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-btn alert-success']")
+    public WebElement cartEklemeSonucu;
+
+    @FindBy(xpath = "(//*[@class='w-icon-cart'])[1]")
+    public WebElement cartButton;
+
+    @FindBy(xpath = "//*[@*='button wc-forward']")
+    public WebElement viewCartButton;
+
+    @FindBy(xpath = "//*[@*='Plus']")
+    public WebElement plusButton;
+
+    @FindBy(xpath = "//*[@*='update_cart']")
+    public WebElement updateCartButton;
+
+    @FindBy(xpath = "//*[text()='Cart updated.']")
+    public WebElement eklemeDogrulama;
+    //(//*[@class='quantity'])[2]
+    ////*[@type='number']
+
+    @FindBy(xpath = "//*[@*='Minus']")
+    public WebElement minusButton;
+
+    @FindBy(xpath = "//*[@*='button checkout wc-forward']")
+    public WebElement checkoutButton;
 
 
 
