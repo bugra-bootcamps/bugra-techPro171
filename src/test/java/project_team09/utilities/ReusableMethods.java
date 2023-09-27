@@ -212,7 +212,7 @@ public class ReusableMethods {
         ReusableMethods.tumSayfaResmi("AnaSayfa");
         //Register butonuna tikla
         MyAccountPage MyAccountPage = new MyAccountPage();
-        MyAccountPage.RegisterButtonLocate.click();
+        MyAccountPage.RegisterButtonLocatez.click();
         ReusableMethods.bekle(3);
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
         SoftAssert softAssert = new SoftAssert();
