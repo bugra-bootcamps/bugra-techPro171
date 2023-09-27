@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.HomePage;
 import project_team09.pages.MyAccountPage;
 
 import java.awt.*;
@@ -179,6 +178,7 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
+
 
     //JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {

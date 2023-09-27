@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import project_team09.pages.Hamza.HomePage;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
+import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
 
 import java.util.Properties;
@@ -18,8 +19,9 @@ public class TC01 {
     @Test
     public void test01() {
 
+
         //Web sitesine gidilir	https://allovercommerce.com/	Web sitesine erişilebilmeli.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceURL"));
+        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceURLHK"));
 
 
         //SigIn butonuna tiklanir 		SigIn Sayfasi erisebilmeli
@@ -29,7 +31,7 @@ public class TC01 {
 
         //Gecerli bilgiler girilir	"frances.bryken@feerock.com
         //Deneme123Deneme"	"Gecerli bilgiler ile giris yapilabilmeli"
-        homePage.Username.sendKeys(ConfigReader.getProperty("username"), Keys.TAB,ConfigReader.getProperty("password"),Keys.ENTER);
+        homePage.Username.sendKeys(ConfigReader.getProperty("usernameHK"), Keys.TAB,ConfigReader.getProperty("passwordHK"),Keys.ENTER);
         ReusableMethods.bekle(3);
 
 
