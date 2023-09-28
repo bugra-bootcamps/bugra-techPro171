@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.HomePage;
 import project_team09.pages.MyAccountPage;
 
 import java.awt.*;
@@ -180,6 +179,7 @@ public class ReusableMethods   {
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
 
+
     //JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
@@ -212,7 +212,7 @@ public class ReusableMethods   {
         ReusableMethods.tumSayfaResmi("AnaSayfa");
         //Register butonuna tikla
         MyAccountPage MyAccountPage = new MyAccountPage();
-        MyAccountPage.RegisterButtonLocate.click();
+        MyAccountPage.RegisterButtonLocatez.click();
         ReusableMethods.bekle(3);
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
         SoftAssert softAssert = new SoftAssert();
@@ -223,5 +223,4 @@ public class ReusableMethods   {
         softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistionTextLocate.getText());
 
     }
-
 }

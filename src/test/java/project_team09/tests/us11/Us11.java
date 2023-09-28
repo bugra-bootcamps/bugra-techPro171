@@ -14,7 +14,7 @@ public class Us11 extends ExtentReport {
 
     @Test
     public void US_11MyAccountCheck() {
-        project_team09.tests.us11.Us11.extentReports = new ExtentReports();
+        Us11.extentReports = new ExtentReports();
         extentTest = extentReports.createTest("US-11","MyAccountPageCheck");
 
         // 1 - Ana sayfaya git.
