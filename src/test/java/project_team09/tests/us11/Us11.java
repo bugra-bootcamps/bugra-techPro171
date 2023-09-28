@@ -4,7 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.MyAccountPage;
+import project_team09.pages.MyAccountPageEnsar;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
 import project_team09.utilities.ExtentReport;
@@ -23,7 +23,7 @@ public class Us11 extends ExtentReport {
 
 
         // 2 - "Sign in / Register" alanındaki "Sign in" butonunun görünür olduğunu doğrula.
-        MyAccountPage MyAccountPage = new MyAccountPage();
+        MyAccountPageEnsar MyAccountPage = new MyAccountPageEnsar();
         SoftAssert softAssert = new SoftAssert();
         ReusableMethods.bekle(2);
         softAssert.assertTrue(MyAccountPage.SignİnButtonLocate.isDisplayed());
