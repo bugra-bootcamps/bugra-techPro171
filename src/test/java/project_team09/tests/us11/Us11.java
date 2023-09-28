@@ -1,5 +1,6 @@
 package project_team09.tests.us11;
 
+import com.aventstack.extentreports.ExtentReports;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
@@ -13,8 +14,8 @@ public class Us11 extends ExtentReport {
 
     @Test
     public void US_11MyAccountCheck() {
-        extentTest = ExtentReport.extentReports.createTest("US-11", "MyAccountPageCheck");
-
+        project_team09.tests.us11.Us11.extentReports = new ExtentReports();
+        extentTest = extentReports.createTest("US-11","MyAccountPageCheck");
 
         // 1 - Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -24,8 +25,9 @@ public class Us11 extends ExtentReport {
         // 2 - "Sign in / Register" alanındaki "Sign in" butonunun görünür olduğunu doğrula.
         MyAccountPage MyAccountPage = new MyAccountPage();
         SoftAssert softAssert = new SoftAssert();
+        ReusableMethods.bekle(2);
         softAssert.assertTrue(MyAccountPage.SignİnButtonLocate.isDisplayed());
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
         extentTest.info("Sign in butonunun görünür olduğu doğrulandı");
 
         // 3 - Sign in / Register alanındaki Sign in butonuna tıkla.
