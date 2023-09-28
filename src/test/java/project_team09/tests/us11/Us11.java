@@ -86,6 +86,7 @@ public class Us11 extends ExtentReport {
 
 
 
+
         // 10 - Dashboard altında, Orders yazısının olduğunu doğrula.
         softAssert.assertTrue(MyAccountPage.OrdersButtonLocate.isDisplayed());
         ReusableMethods.bekle(1);
