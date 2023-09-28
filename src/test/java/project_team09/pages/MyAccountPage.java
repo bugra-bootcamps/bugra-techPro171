@@ -62,7 +62,7 @@ public class MyAccountPage {
     @FindBy(xpath = "(//input[@type='password'])[1]")
     public WebElement PasswordTextBoxLocate;
 
-    @FindBy(xpath = "(//*[@class='login inline-type']")
+    @FindBy(xpath = "//*[@class='login inline-type']")
     public WebElement SignİnButtonLocate;
 
     @FindBy(xpath = "//*[@id='customer_login']")
