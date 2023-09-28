@@ -1,4 +1,4 @@
-package project_team09.pages;
+package project_team09.pages.meryem;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,5 +54,7 @@ public class ShippingAddressPageMeryem {
     @FindBy(xpath = "(//button)[2]")
     public WebElement saveAddressButton;
 
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement dogrulamaMsj;
 
 }
