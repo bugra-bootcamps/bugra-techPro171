@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.MyAccountPage;
+import project_team09.pages.MyAccountPageEnsar;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -211,8 +211,8 @@ public class ReusableMethods   {
         Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         ReusableMethods.tumSayfaResmi("AnaSayfa");
         //Register butonuna tikla
-        MyAccountPage MyAccountPage = new MyAccountPage();
-        MyAccountPage.RegisterButtonLocatez.click();
+        MyAccountPageEnsar MyAccountPage = new MyAccountPageEnsar();
+        MyAccountPage.RegisterButtonLocate.click();
         ReusableMethods.bekle(3);
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
         SoftAssert softAssert = new SoftAssert();
