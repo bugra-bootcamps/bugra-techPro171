@@ -13,17 +13,17 @@ public class Fakeremail {
 
     //FAKE LOCATE
     @FindBy(xpath = "//*[@class='color cetc']") public WebElement fakeMailKutu;
-    @FindBy(xpath = "//*[@class='color cetc']") public WebElement fakeMailTiklama;
-    @FindBy(id = "predmet") public WebElement mailVerivacitonCode;
+
+    @FindBy(id = "predmet") public static WebElement mailVerivacitonCode;
     @FindBy(id = "confirm_pwd") public WebElement confirmPwd;
-    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesajZb;
-    @FindBy(xpath ="//*[text()='Please provide a valid email address.']") public WebElement eksikMailHataMesajiZb;
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement verivacitonInvalidMesaj;
+    @FindBy(xpath ="//*[text()='Please provide a valid email address.']") public WebElement eksikMailHataMesaji;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement pswEksikMesaji;
     @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']") public WebElement kisaPwdMesaj;
-    @FindBy(xpath = "//*[text()='Registration']") public WebElement dogrulamaRegistrationZb;
-    @FindBy(xpath = "//*[text()='Welcome to Hubcomfy!']") public WebElement succesMesajZb;
+    @FindBy(xpath = "//*[text()='Registration']") public WebElement dogrulamaRegistration;
+    @FindBy(xpath = "//*[@class= 'hidden-xs hidden-sm klikaciRadek newMail'][1]") public WebElement succesMesaj;
 
-
+    @FindBy(id = "schranka") public static WebElement fakeMailTiklama;
 
 
 }
