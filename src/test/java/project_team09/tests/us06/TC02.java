@@ -15,7 +15,7 @@ public class TC02 {
 
 
     //Web sitesine gidilir	https://allovercommerce.com/	Web sitesine erişilebilmeli.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceURL"));
+        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceURLHK"));
 
     //SigIn butonuna tiklanir 		SigIn Sayfasi erisebilmeli
         HomePage homePage = new HomePage();
@@ -23,7 +23,7 @@ public class TC02 {
 
     //Gecerli bilgiler girilir	"frances.bryken@feerock.com
     //Deneme123Deneme"	"Gecerli bilgiler ile giris yapilabilmeli"
-        homePage.Username.sendKeys(ConfigReader.getProperty("username"), Keys.TAB,ConfigReader.getProperty("password"),Keys.ENTER);
+        homePage.Username.sendKeys(ConfigReader.getProperty("usernameHK"), Keys.TAB,ConfigReader.getProperty("passwordHK"),Keys.ENTER);
         ReusableMethods.bekle(3);
 
     //"Arama kutusundan istedigi ürünü arama yapilir"	"house"	"Arama sonucu ""No products were found matching your selection."" mesaji almali"
