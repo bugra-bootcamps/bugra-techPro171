@@ -6,8 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.HomePage;
-import project_team09.pages.MyAccountPage;
+import project_team09.pages.MyAccountPageEnsar;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ReusableMethods {
+public class ReusableMethods   {
 
     //HARD WAIT METHOD
     public static void bekle(int saniye) {
@@ -180,6 +179,7 @@ public class ReusableMethods {
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
 
+
     //JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
@@ -208,20 +208,19 @@ public class ReusableMethods {
     }
     public static void vendorKayit() {
         //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         ReusableMethods.tumSayfaResmi("AnaSayfa");
         //Register butonuna tikla
-        MyAccountPage MyAccountPage = new MyAccountPage();
+        MyAccountPageEnsar MyAccountPage = new MyAccountPageEnsar();
         MyAccountPage.RegisterButtonLocate.click();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(MyAccountPage.BecomeVendorButtonLocate.isDisplayed());
         //Çıkan ekranda "Become a Vendor" butonuna tıkla.
         MyAccountPage.BecomeVendorButtonLocate.click();
         //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistrationText.getText());
+        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistionTextLocate.getText());
 
     }
-
 }
