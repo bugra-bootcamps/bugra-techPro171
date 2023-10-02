@@ -3,14 +3,12 @@ package project_team09.tests.us10;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import project_team09.pages.MyAccountPage;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import project_team09.pages.MyAccountPageSÖ;
 import project_team09.utilities.ConfigReader;
-import project_team09.utilities.ExtentReport;
+import project_team09.utilities.ExtentReports;
 import project_team09.utilities.ReusableMethods;
 
-public class Us10 extends ExtentReport {
+public class Us10 extends ExtentReports {
 
     @DataProvider
     public static Object[][] Password() {
@@ -41,7 +39,7 @@ public class Us10 extends ExtentReport {
     public void test01(String tooshort, String weak, String good, String strong) {
 
         ReusableMethods.vendorKayit();
-        extentTest = ExtentReport.extentReports.createTest("Vendor Kaydı US-10 TC-01", "Password seviyeleri görülebilmeli (Vendor Kaydı için)");
+        extentTest = ExtentReports.extentReports.createTest("Vendor Kaydı US-10 TC-01", "Password seviyeleri görülebilmeli (Vendor Kaydı için)");
         ReusableMethods.bekle(5);
 
         extentTest.info("Anasayfaya gidildi.");
@@ -52,7 +50,7 @@ public class Us10 extends ExtentReport {
         extentTest.pass("Vendor Registration sayfasının göründüğü doğrulandı");
 
         //Password alanina 6 karakterden az bir password gir.
-        MyAccountPage MyAccountPage = new MyAccountPage();
+        MyAccountPageSÖ MyAccountPage = new MyAccountPageSÖ();
         MyAccountPage.PasswordTextBoxLocate.sendKeys(tooshort);
         ReusableMethods.bekle(5);
         extentTest.info("Password kutusuna 6 karakterden az bir password girildi.");
@@ -138,7 +136,7 @@ public class Us10 extends ExtentReport {
          */
     }
 
-    ExtentReport rapor = new ExtentReport() {
+    ExtentReports rapor = new ExtentReports() {
     };
 
     @Test(dataProvider = "Password")

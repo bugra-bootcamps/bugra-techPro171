@@ -1,12 +1,11 @@
 package project_team09.utilities;
 
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
-import project_team09.pages.MyAccountPage;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -205,22 +204,5 @@ public class ReusableMethods {
         } catch (Exception ignored) {
 
         }
-    }
-    public static void vendorKayit() {
-        //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
-        ReusableMethods.tumSayfaResmi("AnaSayfa");
-        //Register butonuna tikla
-        MyAccountPage MyAccountPage = new MyAccountPage();
-        MyAccountPage.RegisterButtonLocatez.click();
-        ReusableMethods.bekle(3);
-        //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(MyAccountPage.BecomeVendorButtonLocate.isDisplayed());
-        //Çıkan ekranda "Become a Vendor" butonuna tıkla.
-        MyAccountPage.BecomeVendorButtonLocate.click();
-        //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), MyAccountPage.VendorRegistionTextLocate.getText());
+    }}
 
-    }
-}

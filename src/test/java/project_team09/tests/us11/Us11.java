@@ -3,17 +3,17 @@ package project_team09.tests.us11;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.MyAccountPage;
+import project_team09.pages.MyAccountPageSÖ;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
-import project_team09.utilities.ExtentReport;
+import project_team09.utilities.ExtentReports;
 import project_team09.utilities.ReusableMethods;
 
-public class Us11 extends ExtentReport {
+public class Us11 extends ExtentReports {
 
     @Test
     public void US_11MyAccountCheck() {
-        extentTest = ExtentReport.extentReports.createTest("US-11", "MyAccountPageCheck");
+        extentTest = ExtentReports.extentReports.createTest("US-11", "MyAccountPageCheck");
 
 
         // 1 - Ana sayfaya git.
@@ -22,7 +22,7 @@ public class Us11 extends ExtentReport {
 
 
         // 2 - "Sign in / Register" alanındaki "Sign in" butonunun görünür olduğunu doğrula.
-        MyAccountPage MyAccountPage = new MyAccountPage();
+        MyAccountPageSÖ MyAccountPage = new MyAccountPageSÖ();
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(MyAccountPage.SignİnButtonLocate.isDisplayed());
         ReusableMethods.bekle(1);
