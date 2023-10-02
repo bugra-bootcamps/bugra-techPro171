@@ -1,4 +1,4 @@
-package project_team09.pages.Hilal;
+package project_team09.pages.us08_09;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,10 +30,10 @@ public class Shopping {
     public static WebElement secondHeartHb;
 
 
-    @FindBy(xpath = "(//*[@src='https://allovercommerce.com/wp-content/uploads/2022/10/kitap-1-255x300.jpg'])[2]")
+    @FindBy(xpath = "(//*[@class='product-media'])[2]")
     public static WebElement ilkUrun;
 
-    @FindBy(id = "data-product_id")
+    @FindBy(xpath = "(//*[@class='btn btn-dark btn-rounded btn-sm add_to_cart alt'])[1]")
     public static WebElement addToCardHb;
 
     @FindBy(xpath = " (//*[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail'])[2]")
@@ -67,18 +67,30 @@ public class Shopping {
 
 
 
-    @FindBy(xpath = "//input[@id='username']")public static WebElement userNameEB;
-    @FindBy(xpath = "//*[@id='billing_first_name']") public WebElement lasttNameEB;
-    @FindBy(xpath = "//*[@id='select2-billing_country-container']") public WebElement countryButonEB;
-    @FindBy(xpath = "//*[@id='billing_address_1']") public WebElement streetButonEB;
-    @FindBy(xpath = "//*[@id='select2-billing_state-container']") public WebElement stateButonEB;
-    @FindBy(xpath = "//*[@id='billing_postcode']")public WebElement zipCodeButonuEB;
-    @FindBy(xpath = "//*[@class='input-radio'])[1]")public WebElement wireTransferButonuEB;
-    @FindBy(xpath = "//*[@value='Place order']")   public WebElement PlaceorderButonuEB;
-    @FindBy(xpath = "(//*[@type='email'])[1]") public  WebElement emailEB;
-    @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']") public WebElement thankyuYazisi;
-    @FindBy(xpath = "//*[@id='coupon_code']")public WebElement couponDiscountField;
-    @FindBy(xpath = "//*[@name='apply_coupon']")    public WebElement applyCouponEB;
+    @FindBy(xpath = "(//*[@class='input-text '])[1]")
+    public static WebElement userNameHb;
+    @FindBy(xpath = "//*[@id='billing_first_name']")
+    public WebElement lasttNameEB;
+    @FindBy(xpath = "//*[@id='select2-billing_country-container']")
+    public WebElement countryButonEB;
+    @FindBy(xpath = "//*[@id='billing_address_1']")
+    public static WebElement streetButonEB;
+    @FindBy(xpath = "//*[@id='select2-billing_state-container']")
+    public WebElement stateButonEB;
+    @FindBy(xpath = "//*[@id='billing_postcode']")
+    public WebElement zipCodeButonuEB;
+    @FindBy(xpath = "//*[@class='input-radio'])[1]")
+    public WebElement wireTransferButonuEB;
+    @FindBy(xpath = "//*[@value='Place order']")
+    public WebElement PlaceorderButonuEB;
+    @FindBy(xpath = "(//*[@type='email'])[1]")
+    public  WebElement emailEB;
+    @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']")
+    public static WebElement thankyouYazisi;
+    @FindBy(xpath = "//*[@id='coupon_code']")
+    public WebElement couponDiscountField;
+    @FindBy(xpath = "(//*[@class='input-text '])[6]")
+    public WebElement TownCity;
 
 
 
