@@ -7,9 +7,10 @@ import org.testng.asserts.SoftAssert;
 import project_team09.pages.Us01Us02Us03.Anasayfa;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
+import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
 
-public class Us02_GecersizYeniKullaniciKayit {
+public class Us02_GecersizYeniKullaniciKayit extends ExtentReport {
 
 
     @Test
@@ -17,6 +18,8 @@ public class Us02_GecersizYeniKullaniciKayit {
 
         Anasayfa anasayfa = new Anasayfa();
         SoftAssert softAssert = new SoftAssert();
+        extentTest = ExtentReport.extentReports.createTest("","");
+
 
         //Web sitesine git
         Driver.getDriver().get(ConfigReader.getProperty("allowerCommerceUrl"));
