@@ -1,20 +1,21 @@
 package project_team09.tests.us11;
 
+import com.aventstack.extentreports.ExtentReports;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.MyAccountPageSÖ;
+import project_team09.pages.MyAccountPageEnsar;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
-import project_team09.utilities.ExtentReports;
+import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
 
-public class Us11 extends ExtentReports {
+public class Us11 extends ExtentReport {
 
     @Test
     public void US_11MyAccountCheck() {
-        extentTest = ExtentReports.extentReports.createTest("US-11", "MyAccountPageCheck");
-
+        Us11.extentReports = new ExtentReports();
+        extentTest = extentReports.createTest("US-11","MyAccountPageCheck");
 
         // 1 - Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
@@ -22,10 +23,11 @@ public class Us11 extends ExtentReports {
 
 
         // 2 - "Sign in / Register" alanındaki "Sign in" butonunun görünür olduğunu doğrula.
-        MyAccountPageSÖ MyAccountPage = new MyAccountPageSÖ();
+        MyAccountPageEnsar MyAccountPage = new MyAccountPageEnsar();
         SoftAssert softAssert = new SoftAssert();
+        ReusableMethods.bekle(2);
         softAssert.assertTrue(MyAccountPage.SignİnButtonLocate.isDisplayed());
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
         extentTest.info("Sign in butonunun görünür olduğu doğrulandı");
 
         // 3 - Sign in / Register alanındaki Sign in butonuna tıkla.
@@ -38,7 +40,7 @@ public class Us11 extends ExtentReports {
         ReusableMethods.bekle(1);
         extentTest.info("Sign in penceresinin açıldığını doğrulandı");
 
-       // 5 - Sign in pop-up penceresinde bulunan "SIGN-IN" butonunun görünür ve ulaşılabilir olduğunu doğrula.
+        // 5 - Sign in pop-up penceresinde bulunan "SIGN-IN" butonunun görünür ve ulaşılabilir olduğunu doğrula.
         MyAccountPage.PopUpİçindesignInButton.isDisplayed();//Gorunur
         MyAccountPage.PopUpİçindesignInButton.isEnabled();//Ulasilabilir
         ReusableMethods.bekle(1);
@@ -81,6 +83,7 @@ public class Us11 extends ExtentReports {
         softAssert.assertTrue(MyAccountPage.StoreManagerButtonLocate.isDisplayed());
         ReusableMethods.bekle(1);
         extentTest.info("Dashboard altında, Store manager yazısının olduğunu doğrulandı");
+
 
 
 
@@ -131,5 +134,4 @@ public class Us11 extends ExtentReports {
     }
 
 }
-
 

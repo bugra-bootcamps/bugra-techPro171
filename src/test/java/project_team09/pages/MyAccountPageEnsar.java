@@ -1,13 +1,14 @@
 package project_team09.pages;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import project_team09.utilities.Driver;
 
-public class MyAccountPage {
-    public MyAccountPage() {
+
+public class MyAccountPageEnsar {
+    public MyAccountPageEnsar() {
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -62,7 +63,7 @@ public class MyAccountPage {
     @FindBy(xpath = "(//input[@type='password'])[1]")
     public WebElement PasswordTextBoxLocate;
 
-    @FindBy(xpath = "(//*[@class='login inline-type']")
+    @FindBy(xpath = "//*[@class='login inline-type']")
     public WebElement SignİnButtonLocate;
 
     @FindBy(xpath = "//*[@id='customer_login']")
@@ -77,12 +78,13 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@id='username']")
     public WebElement PopUpİçindeEmailBox;
 
-    @FindBy(xpath = "(//h2)[1]")
-    public WebElement VendorRegistrationText;
+
+
+
+
 
 
 }
-
 
 
 
