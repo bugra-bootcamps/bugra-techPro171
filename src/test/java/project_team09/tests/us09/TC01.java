@@ -5,10 +5,7 @@ package project_team09.tests.us09;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-import project_team09.pages.Hilal.Fakeremail;
 import project_team09.pages.Hilal.Fakeremail;
 import project_team09.pages.Hilal.VendorGiris;
 import project_team09.utilities.ConfigReader;
@@ -20,7 +17,7 @@ public class TC01 {
     public void tc01() {
 
         VendorGiris vendorGiris= new VendorGiris();
-       Fakeremail fakeremail = new Fakeremail();
+        Fakeremail fakeremail = new Fakeremail();
 
 
         //Web sitesine git
@@ -29,7 +26,7 @@ public class TC01 {
 
         //Registera butonuna tıkla
 
-        vendorGiris.SıngIN.click();
+        vendorGiris.singIN.click();
         ReusableMethods.bekle(3);
         //sign up button tıkla
         vendorGiris.signUp.click();
@@ -42,39 +39,37 @@ public class TC01 {
         ReusableMethods.bekle(3);
 
         //Email alanina email gir.
-      Driver.getDriver().switchTo().newWindow(WindowType.WINDOW);
+        Driver.getDriver().switchTo().newWindow(WindowType.WINDOW);
         ReusableMethods.window(1);
         Driver.getDriver().get(ConfigReader.getProperty("FakerUrl"));
         ReusableMethods.bekle(3);
         fakeremail.fakeMailKutu.click();
         ReusableMethods.window(0);
         ReusableMethods.bekle(3);
-     vendorGiris.email.click();
-      ReusableMethods.bekle(3);
+        vendorGiris.email.click();
+        ReusableMethods.bekle(3);
         Actions actions = new Actions(Driver.getDriver());
         actions.keyDown(Keys.CONTROL).sendKeys("v").release().perform();
         ReusableMethods.bekle(2);
-
-
-
-
-
-      /* //Fake mail sitesini yeni bir sekmede açar
-        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
-        Driver.getDriver().get(ConfigReader.getProperty("FakerUrl"));
-
-        //Fake maili kopyalar
-       /* Fakeremail.FakerCopy.sendKeys(Keys.TAB,Keys.TAB);
-        ReusableMethods.click(VendorGiris.email);
-
-
+        vendorGiris.reSendCode.click();
         ReusableMethods.bekle(3);
-        Fakeremail.FakerCopy.sendKeys(Keys.TAB,Keys.TAB);
-        Fakeremail.FakerCopy.click();
-        //Gecerli e mail adresini girer
-        ReusableMethods.switchToWindow(0);
 
-  */
+
+        //Mail adresine gelen kodu Verification Code text kutusuna gir
+       ReusableMethods.window(1);//sekmeye geçer
+        ReusableMethods.bekle(10);
+        fakeremail.fakeMailTiklama.click();
+
+
+       String mailKod = Fakeremail.mailVerivacitonCode.getText();
+
+       ReusableMethods.bekle(2);
+       String[] sadeceKod = mailKod.split(" ");
+
+       System.out.print("KOD: " + sadeceKod[6]);
+       ReusableMethods.bekle(2);
+        ReusableMethods.window(0);
+        vendorGiris.verificationCodeClick.sendKeys(sadeceKod[6]);
 
 
 

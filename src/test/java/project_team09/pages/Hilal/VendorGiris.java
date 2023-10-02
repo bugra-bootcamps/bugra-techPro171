@@ -6,13 +6,15 @@ import org.openqa.selenium.support.PageFactory;
 import project_team09.utilities.Driver;
 
 public class VendorGiris {
+
+
     public   VendorGiris() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
     @FindBy(xpath = "//*[@class='login inline-type']")
-    public WebElement SıngIN;
+    public WebElement singIN;
 
     @FindBy(xpath = "//*[text()='Become a Vendor']")
     public WebElement becomeVendor;
@@ -29,7 +31,10 @@ public class VendorGiris {
     @FindBy (xpath = "//*[@id='user_email']")
     public  WebElement email;
 
-    @FindBy (xpath = "//*[@class='w-icon-account']" )
-    public WebElement signIn;
+    @FindBy (xpath = "(//input)[5]" )
+    public WebElement reSendCode;
+
+    @FindBy(name = "wcfm_email_verified_input") public WebElement verificationCodeClick;
+
 
 }
