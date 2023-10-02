@@ -133,10 +133,6 @@ public class Us10 extends ExtentReport {
          Password seviyelerinin hepsini yerine yazıp doğrulamasını yapıyoruz
          bu sırada da hepsinin ekran fotoğraflarını alarak kodlarımızı da
          görüntülerle desteklemiş oluyoruz.
-
-
-
          */
-
     }
 }
