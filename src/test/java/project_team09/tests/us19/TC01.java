@@ -1,7 +1,5 @@
 package project_team09.tests.us19;
 
-
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -15,9 +13,9 @@ import project_team09.utilities.Driver;
 import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
 
-import static project_team09.utilities.ExtentReport.extentTest;
 
-public class TC01 {
+
+public class TC01 extends ExtentReport {
 
     @Test
     public void test01() {

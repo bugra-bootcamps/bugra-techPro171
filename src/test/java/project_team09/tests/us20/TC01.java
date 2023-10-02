@@ -8,12 +8,11 @@ import project_team09.pages.us18_19_20.MyAccountPageSÖ;
 import project_team09.pages.us18_19_20.Orders;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
+import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
 
-import static project_team09.utilities.ExtentReport.extentReports;
-import static project_team09.utilities.ExtentReport.extentTest;
 
-public class TC01 {
+public class TC01 extends ExtentReport {
 
     @Test
     public void test01() {
