@@ -1,17 +1,12 @@
 package project_team09.tests.us06;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import project_team09.pages.Hamza.HomePage;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
-import project_team09.utilities.ExtentReport;
 import project_team09.utilities.ReusableMethods;
-
-import java.util.Properties;
 
 public class TC01 {
 
