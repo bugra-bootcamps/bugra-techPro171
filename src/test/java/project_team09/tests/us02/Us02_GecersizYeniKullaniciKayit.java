@@ -2,10 +2,9 @@ package project_team09.tests.us02;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.AslihanPage.Anasayfa;
+import project_team09.pages.Us01Us02Us03.Anasayfa;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
 import project_team09.utilities.ReusableMethods;
@@ -45,8 +44,6 @@ public class Us02_GecersizYeniKullaniciKayit {
         anasayfa.signUpYeniKayit.click();
 
 
-        //"An account is already registered with your email address." uyarı metni ve "Please log in." görülmeli
-        //manuelde böyle fakat otomasyonda sign ın kutusuna geçiş yapıyor
 
         //uyarı metni görülmeli
         ReusableMethods.bekle(2);

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import project_team09.utilities.Driver;
 
 public class MyAccountPage {
-    public MyAccountPage() {
+   public MyAccountPage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -85,7 +85,7 @@ public class MyAccountPage {
     public WebElement RegisterButtonLocate;
 
     @FindBy(xpath = "//*[text()='Become a Vendor']")
-    public WebElement BecomeVendorButtonLocate;
+   public WebElement BecomeVendorButtonLocate;
 
     @FindBy(xpath = "(//h2)[1]")
     public WebElement VendorRegistrationText;

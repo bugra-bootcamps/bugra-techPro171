@@ -1,10 +1,8 @@
-package project_team09.pages.AslihanPage;
+package project_team09.pages.Us01Us02Us03;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
-import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
 
 public class Anasayfa {
@@ -46,8 +44,6 @@ public class Anasayfa {
     public WebElement kayitliBilgiHataAs;
 
 
-    @FindBy (xpath = "//*[@name='rememberme']")
-    public WebElement signInRememberMe;
 
 
 
