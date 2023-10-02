@@ -5,8 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import project_team09.utilities.Driver;
 
+
 public class MyAccountPageEnsar {
     public MyAccountPageEnsar() {
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -75,6 +77,11 @@ public class MyAccountPageEnsar {
 
     @FindBy(xpath = "//*[@id='username']")
     public WebElement PopUpİçindeEmailBox;
+
+
+
+
+
 
 
 }

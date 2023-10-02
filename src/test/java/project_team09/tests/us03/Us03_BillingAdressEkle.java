@@ -2,12 +2,10 @@ package project_team09.tests.us03;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import project_team09.pages.AslihanPage.Anasayfa;
+import project_team09.pages.Us01Us02Us03.Anasayfa;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
 import project_team09.utilities.ReusableMethods;
@@ -335,6 +333,9 @@ public class Us03_BillingAdressEkle {
         softAssert.assertAll();
         ReusableMethods.bekle(2);
 
+        //Sayfayı kapat
+        Driver.closeDriver();
+
 
     }
 
@@ -395,7 +396,7 @@ public class Us03_BillingAdressEkle {
         ReusableMethods.bekle(1);
         anasayfa.stateCounttextAs.sendKeys("Berat",Keys.TAB);
         ReusableMethods.bekle(1);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
 
 
         //"Postcode/ZIP" bilgisi gir
@@ -483,8 +484,6 @@ public class Us03_BillingAdressEkle {
         ReusableMethods.bekle(1);
         anasayfa.stateCounttextAs.sendKeys("Berat",Keys.TAB);
         ReusableMethods.bekle(1);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-
 
 
         //"Postcode/ZIP" bilgisi gir
@@ -501,7 +500,7 @@ public class Us03_BillingAdressEkle {
         ReusableMethods.bekle(3);
 
 
-        //kayıt yapılaamdığını dogrula
+        //kayıt yapılamadığını dogrula
         softAssert.assertTrue(anasayfa.fieldErrorAs.isDisplayed(), "eksik bilgiler ile kayıt yapılamadı");
         softAssert.assertAll();
 
@@ -561,7 +560,6 @@ public class Us03_BillingAdressEkle {
         anasayfa.streetAdressAs.sendKeys("vatan");
 
 
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //county/state bilgisini boş bırak
 
@@ -728,7 +726,7 @@ public class Us03_BillingAdressEkle {
         ReusableMethods.bekle(1);
         anasayfa.stateCounttextAs.sendKeys("Berat",Keys.TAB);
         ReusableMethods.bekle(1);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
 
         //"Postcode/ZIP" bilgisi gir
         anasayfa.postcode_zipAs.click();
@@ -758,15 +756,38 @@ public class Us03_BillingAdressEkle {
         Anasayfa anasayfa = new Anasayfa();
         SoftAssert softAssert = new SoftAssert();
         Actions actions = new Actions(Driver.getDriver());
+        Faker faker = new Faker();
 
-        //Web sitesine git
+        //Web sitesine git ve doğrula
         Driver.getDriver().get(ConfigReader.getProperty("allowerCommerceUrl"));
         softAssert.assertTrue(anasayfa.registerAs.isDisplayed());
 
 
-        //Gecerli bilgilerle giris yap ve girişi doğrula
-        anasayfa.signInAs.click();
-        anasayfa.signInEmail.sendKeys(ConfigReader.getProperty("signInEmail5"), Keys.TAB, ConfigReader.getProperty("signInPassword1"), Keys.ENTER);
+        //Registera tıkla
+        anasayfa.registerAs.click();
+        ReusableMethods.bekle(3);
+
+        //username kutusuna bir kullanıcı adı gir
+        anasayfa.usernameAs.sendKeys(faker.name().firstName());
+
+
+        //email kutusuna kayıtlı olmayan bir mail gir
+        anasayfa.emailAs.sendKeys(faker.internet().emailAddress());
+
+        //Şifre kutusuna bir şifre gir
+        anasayfa.passwordSignUpAs.sendKeys(ConfigReader.getProperty("signInPassword1"));
+
+        //"I agree to the privacy policy" kontrol kutusuna tıkla
+        anasayfa.iAgreeButonAs.click();
+
+        //Sign Up butonuna tıkla
+        anasayfa.signUpYeniKayit.click();
+
+        ReusableMethods.bekle(2);
+
+
+        //Kayıt işleminin gerçekleştiğini doğrula
+
         softAssert.assertTrue(anasayfa.signOutAs.isDisplayed());
 
 
@@ -783,69 +804,64 @@ public class Us03_BillingAdressEkle {
 
         //"Billing Address" altindaki "ADD" butonuna tikla ve açıldığını doğrula
         anasayfa.billingAdresADD.click();
-         ReusableMethods.bekle(2);
-         softAssert.assertTrue(anasayfa.firstNameYazi.isDisplayed());
-
-
+        ReusableMethods.bekle(2);
+        softAssert.assertTrue(anasayfa.firstNameYazi.isDisplayed());
 
 
         //"First name","Last name","Country/Region" sec içine bilgi gir bilgisi gir
         anasayfa.adressesFirstNameAs.click();
-        anasayfa.adressesFirstNameAs.clear();
-        anasayfa.adressesFirstNameAs.sendKeys("as");
+        anasayfa.adressesFirstNameAs.sendKeys("as",Keys.TAB,"al",Keys.TAB,Keys.TAB,"Albania",Keys.TAB);
 
-        anasayfa.adressesLastNameAs.clear();
-        anasayfa.adressesLastNameAs.sendKeys("al");
 
-        ReusableMethods.bekle(1);
-        anasayfa.countryRegionAs.clear();
-        anasayfa.countryRegionAs.click();
-        anasayfa.countryregionTextAs.sendKeys("Alaska",Keys.TAB);
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
 
         //"Street Address" bilgisi gir
-        anasayfa.streetAdressAs.clear();
-        anasayfa.streetAdressAs.sendKeys("porto");
-
+        anasayfa.streetAdressAs.sendKeys("isik");
+        ReusableMethods.bekle(1);
 
         //Town/City" bilgilerini gir
-        anasayfa.townCityAs.clear();
         anasayfa.townCityAs.sendKeys("buyuk");
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
 
         //"state/county" bilgilerini gir
         anasayfa.stateCountAs.click();
         ReusableMethods.bekle(1);
-        anasayfa.stateCounttextAs.clear();
         anasayfa.stateCounttextAs.sendKeys("Berat",Keys.TAB);
         ReusableMethods.bekle(1);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+        //"Postcode/ZIP" bilgisi gir
+        anasayfa.postcode_zipAs.sendKeys("123");
+        ReusableMethods.bekle(1);
+
+        //"Phone" bilgisi gir
+        anasayfa.phoneAs.sendKeys("05321456622");
+        ReusableMethods.bekle(1);
+
 
         //"Postcode/ZIP" bilgisi gir
         anasayfa.postcode_zipAs.click();
-        anasayfa.postcode_zipAs.clear();
         anasayfa.postcode_zipAs.sendKeys("06210");
 
         //"Phone" bilgisi gir
         anasayfa.phoneAs.click();
-        anasayfa.phoneAs.clear();
         anasayfa.phoneAs.sendKeys("05321456622");
-
-
 
         //"SAVE ADDRESS" butonuna tikla
         anasayfa.saveAdressButonAs.click();
         ReusableMethods.bekle(3);
 
 
-        //kayıt yapıldığını dogrula
-       ///////////////////////////////////////////////////////
-       // softAssert.assertAll();
+        //"Adresses" a tıkla ve kayıt yapıldığını dogrula
+
+        ReusableMethods.bekle(2);
+        softAssert.assertTrue(anasayfa.editBillingButonAs.isDisplayed());
+        softAssert.assertAll();
 
         //sayfayı kapat
-       // Driver.closeDriver();
+        Driver.closeDriver();
 
 
     }
@@ -904,8 +920,8 @@ public class Us03_BillingAdressEkle {
 
     }
 
-    @Test
-    public void denemeTestleri() {
+
+   /* public void denemeTestleri() {
         Anasayfa anasayfa = new Anasayfa();
         SoftAssert softAssert = new SoftAssert();
 
@@ -956,5 +972,5 @@ public class Us03_BillingAdressEkle {
         anasayfa.postcode_zipAs.sendKeys("123");
         ReusableMethods.bekle(5);
 
-    }
+    }*/
 }
