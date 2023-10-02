@@ -134,9 +134,8 @@ public class Us10 extends ExtentReport {
          bu sırada da hepsinin ekran fotoğraflarını alarak kodlarımızı da
          görüntülerle desteklemiş oluyoruz.
 
-
-
          */
-
     }
 }
+
+

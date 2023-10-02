@@ -40,7 +40,7 @@ public class Us11 extends ExtentReport {
         ReusableMethods.bekle(1);
         extentTest.info("Sign in penceresinin açıldığını doğrulandı");
 
-       // 5 - Sign in pop-up penceresinde bulunan "SIGN-IN" butonunun görünür ve ulaşılabilir olduğunu doğrula.
+        // 5 - Sign in pop-up penceresinde bulunan "SIGN-IN" butonunun görünür ve ulaşılabilir olduğunu doğrula.
         MyAccountPage.PopUpİçindesignInButton.isDisplayed();//Gorunur
         MyAccountPage.PopUpİçindesignInButton.isEnabled();//Ulasilabilir
         ReusableMethods.bekle(1);
@@ -134,5 +134,4 @@ public class Us11 extends ExtentReport {
     }
 
 }
-
 
