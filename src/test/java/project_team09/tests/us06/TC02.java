@@ -4,7 +4,7 @@ package project_team09.tests.us06;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import project_team09.pages.Hamza.HomePage;
+import project_team09.pages.us06_us07.HomePage;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
 import project_team09.utilities.ReusableMethods;
