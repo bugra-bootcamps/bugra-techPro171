@@ -1,4 +1,4 @@
-package project_team09.pages.Hamza;
+package project_team09.pages.us06_us07;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

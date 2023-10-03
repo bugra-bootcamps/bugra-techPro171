@@ -1,19 +1,14 @@
 package project_team09.tests.us06;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import project_team09.pages.Hamza.HomePage;
-import project_team09.pages.Hamza.MyAccount;
+import project_team09.pages.us06_us07.HomePage;
+import project_team09.pages.us06_us07.MyAccount;
 import project_team09.utilities.ConfigReader;
 import project_team09.utilities.Driver;
 import project_team09.utilities.ReusableMethods;
-
-import java.util.List;
 
 public class TC05 {
 

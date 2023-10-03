@@ -1,4 +1,4 @@
-package project_team09.pages.Hamza;
+package project_team09.pages.us06_us07;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +28,18 @@ public class HomePage {
 
     @FindBy(xpath = "(//*[@*='attachment-woocommerce_thumbnail size-woocommerce_thumbnail'])[2]")
     public WebElement shoesPicture;
+
+    @FindBy(xpath = "(//*[@class='woocommerce-LoopProduct-link woocommerce-loop-product__link'])[1]")
+    public WebElement shirtPicture;
+
+    @FindBy(xpath = "(//*[@*='product-wrap'])[2]")
+    public WebElement bagPicture;
+
+    @FindBy(xpath = "(//*[@*='product-media'])[1]")
+    public WebElement watchPicture;
+
+    @FindBy(xpath = "(//*[@*='product-media'])[1]")
+    public WebElement iphonePicture;
 
     @FindBy(xpath = "//*[@*='add-to-cart']")
     public WebElement addToCartButton;
