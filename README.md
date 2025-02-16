@@ -138,7 +138,7 @@ For any questions, open an issue on [GitHub Issues](https://github.com/bugra-boo
 
 ✉️ **Contact:**
 - **GitHub:** [@bugra-bootcamps](https://github.com/bugra-bootcamps)
-- **Email:** bugra@example.com
+- **Email:** hanbugra@yahoo.com
 
 ---
 
